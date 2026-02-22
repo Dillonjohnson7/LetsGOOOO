@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Breathing</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b8cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    animation: {
+                        'breathe': 'breathe 8s infinite ease-in-out',
+                        'pulse-glow': 'pulse-glow 4s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(0.85)', opacity: '0.6' },
+                            '50%': { transform: 'scale(1.1)', opacity: '1' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px 0px rgba(43, 140, 238, 0.2)' },
+                            '50%': { boxShadow: '0 0 60px 10px rgba(43, 140, 238, 0.5)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for breathing animation synchronization */
+        .ring-container {
+            display: grid;
+            place-items: center;
+        }
+        .breathing-ring {
+            animation: breathe 8s infinite ease-in-out;
+        }
+        .breathing-text {
+            animation: text-fade 8s infinite ease-in-out;
+        }
+        @keyframes text-fade {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-hidden selection:bg-primary selection:text-white">
+<!-- Header / Exit Action -->
+<header class="flex justify-end p-6 z-20 absolute top-0 w-full">
+<button class="group flex items-center justify-center h-10 px-4 gap-2 bg-slate-200/10 dark:bg-slate-800/40 hover:bg-slate-200/20 dark:hover:bg-slate-800/60 backdrop-blur-md rounded-full transition-all duration-300 border border-transparent hover:border-slate-500/30">
+<span class="material-symbols-outlined text-slate-800 dark:text-white text-[20px] transition-transform group-hover:rotate-90">close</span>
+<span class="text-slate-800 dark:text-white text-sm font-bold tracking-wide uppercase">End Session</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-center relative w-full h-screen">
+<!-- Background Ambient Glow -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[80%] bg-primary/10 blur-[120px] rounded-full opacity-50"></div>
+</div>
+<!-- Central Breathing Component -->
+<div class="relative z-10 flex flex-col items-center justify-center w-full max-w-md px-6">
+<!-- Breathing Ring Visual -->
+<div class="ring-container relative w-[320px] h-[320px] mb-12">
+<!-- Outer Static Guide Ring -->
+<div class="absolute inset-0 rounded-full border border-slate-300/10 dark:border-slate-700/30"></div>
+<!-- Animated Rings -->
+<!-- Largest faint glow ring -->
+<div class="breathing-ring absolute inset-[-20px] rounded-full bg-primary/5 blur-xl"></div>
+<!-- Middle ring with border -->
+<div class="breathing-ring absolute inset-0 rounded-full border-2 border-primary/30 shadow-[0_0_30px_rgba(43,140,238,0.2)]"></div>
+<!-- Core glow -->
+<div class="breathing-ring absolute inset-8 rounded-full bg-gradient-to-tr from-primary/20 to-primary/5 border border-primary/50 shadow-[0_0_50px_rgba(43,140,238,0.4)_inset] flex items-center justify-center backdrop-blur-sm">
+<!-- Inner status text container -->
+<div class="flex flex-col items-center justify-center text-center">
+<span class="breathing-text text-primary dark:text-primary text-5xl font-black tracking-tighter drop-shadow-[0_0_15px_rgba(43,140,238,0.8)]">INHALE</span>
+<span class="text-slate-500 dark:text-slate-400 text-xs font-medium tracking-[0.2em] uppercase mt-2">Recovery Phase</span>
+</div>
+</div>
+</div>
+<!-- Timer & Metrics -->
+<div class="flex flex-col items-center gap-6 w-full">
+<!-- Main Timer -->
+<div class="flex flex-col items-center">
+<div class="text-slate-900 dark:text-white text-6xl font-bold tracking-tighter font-mono tabular-nums leading-none">
+                        04:45
+                    </div>
+<div class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide mt-2 uppercase">Total Time</div>
+</div>
+<!-- Secondary Metrics Row -->
+<div class="flex items-center justify-between w-full max-w-[280px] mt-8 pt-8 border-t border-slate-200/10 dark:border-slate-800/50">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[24px]">favorite</span>
+<span class="text-slate-900 dark:text-white text-lg font-bold">64</span>
+<span class="text-slate-500 dark:text-slate-500 text-[10px] uppercase font-bold tracking-wider">BPM</span>
+</div>
+<div class="h-8 w-px bg-slate-200/10 dark:bg-slate-800/50"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[24px]">air</span>
+<span class="text-slate-900 dark:text-white text-lg font-bold">98%</span>
+<span class="text-slate-500 dark:text-slate-500 text-[10px] uppercase font-bold tracking-wider">O2 Sat</span>
+</div>
+<div class="h-8 w-px bg-slate-200/10 dark:bg-slate-800/50"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[24px]">graphic_eq</span>
+<span class="text-slate-900 dark:text-white text-lg font-bold">Low</span>
+<span class="text-slate-500 dark:text-slate-500 text-[10px] uppercase font-bold tracking-wider">Stress</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Guidance -->
+<div class="absolute bottom-10 left-0 w-full px-6 text-center z-10">
+<p class="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed max-w-xs mx-auto">
+                Expand your diaphragm fully. Control the intake.
+            </p>
+<!-- Progress Indicator -->
+<div class="flex justify-center gap-2 mt-4">
+<div class="h-1 w-12 rounded-full bg-primary shadow-[0_0_10px_rgba(43,140,238,0.8)]"></div>
+<div class="h-1 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-1 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+</div>
+</div>
+</main>
+</body></html>

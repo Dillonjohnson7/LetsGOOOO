@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Refined Workout Tracking</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#121212", 
+                        "surface-dark": "#1e1e1e",
+                        "surface-dark-highlight": "#2a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        /* Checkbox custom styles */
+        .checkbox-custom:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- Sticky Top Bar -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-white/5 pb-2">
+<div class="flex items-center justify-between px-6 pt-6 pb-2">
+<button class="flex items-center justify-center w-10 h-10 -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-slate-400">Workout</h1>
+<h2 class="text-lg font-black tracking-tight uppercase leading-none">The Power Phase</h2>
+</div>
+<div class="flex items-center justify-center w-10 h-10 -mr-2">
+<span class="material-symbols-outlined text-2xl text-slate-400 dark:text-slate-500">more_horiz</span>
+</div>
+</div>
+<!-- Progress Info -->
+<div class="px-6 flex flex-col gap-2 mt-2">
+<div class="flex justify-between items-end">
+<span class="text-xs font-bold text-primary tracking-wider uppercase">High Intensity</span>
+<span class="text-sm font-bold tabular-nums">14<span class="text-slate-400 dark:text-slate-600">/22 sets</span></span>
+</div>
+<div class="h-1.5 w-full bg-slate-200 dark:bg-surface-dark-highlight rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out shadow-[0_0_10px_rgba(242,13,13,0.5)]" style="width: 63%;"></div>
+</div>
+</div>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-grow flex flex-col px-4 pt-6 pb-32">
+<!-- Active Exercise Card -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-[2rem] overflow-hidden shadow-xl shadow-black/5 dark:shadow-black/20 ring-1 ring-black/5 dark:ring-white/5">
+<!-- Illustration Area -->
+<div class="relative w-full aspect-[4/3] bg-surface-dark-highlight flex items-center justify-center overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-60 z-10"></div>
+<!-- Background Grid/Pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<!-- Dynamic Illustration Placeholder -->
+<img alt="Bench Press Illustration" class="w-full h-full object-cover opacity-80 mix-blend-luminosity contrast-125" data-alt="Monochrome athletic gym setting bench press focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPJNZcBpXxmjIvS7wEvu7HZVF7YkApVjB8i3PwiemeeUPjP1vJWEzpZ9h_VsZ9nBMVoaxqHmFv4Gmlykm2aT8-hBrgm0Fg36kWoGavx6El1-kPI51vPrloQJ6WMW3G3R_VEepZaT_8b3l_Iz2Lxx_8mo_4zF-eEwFC12EvpH0eOR_oxobAhevxzem21H6mMCl97-n4dFWWNc3yWTSpLxFky31WS0MCzEDLJoxz1rlU1eQCvmi6WY123HzCkg_48RsJ4HNruNttppNT"/>
+<div class="absolute top-4 right-4 z-20">
+<button class="w-10 h-10 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-xl">videocam</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-6 z-20">
+<h3 class="text-3xl font-black text-white tracking-tighter uppercase italic">Bench Press</h3>
+<p class="text-primary font-bold text-sm tracking-widest uppercase mt-1">Chest • Compound</p>
+</div>
+</div>
+<!-- Set Tracking Module -->
+<div class="p-6 flex flex-col gap-1">
+<div class="flex justify-between items-center mb-4 px-2">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Set Performance</span>
+<button class="text-primary text-xs font-bold uppercase tracking-wider hover:text-white transition-colors">+ Add Set</button>
+</div>
+<!-- Set 1: Done -->
+<label class="group flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-surface-dark-highlight/50 border border-transparent hover:border-slate-200 dark:hover:border-white/10 transition-all cursor-pointer select-none">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center justify-center">
+<input checked="" class="checkbox-custom appearance-none w-7 h-7 border-2 border-slate-300 dark:border-slate-600 rounded-full bg-transparent checked:bg-primary checked:border-primary transition-all focus:ring-0 focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-0.5">Warm Up</span>
+<span class="text-lg font-bold text-slate-400 line-through decoration-primary decoration-2">135 lbs <span class="text-sm font-normal mx-1">x</span> 10</span>
+</div>
+</div>
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">check</span>
+</div>
+</label>
+<!-- Set 2: Done -->
+<label class="group flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-surface-dark-highlight/50 border border-transparent hover:border-slate-200 dark:hover:border-white/10 transition-all cursor-pointer select-none mt-2">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center justify-center">
+<input checked="" class="checkbox-custom appearance-none w-7 h-7 border-2 border-slate-300 dark:border-slate-600 rounded-full bg-transparent checked:bg-primary checked:border-primary transition-all focus:ring-0 focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wide mb-0.5">Working Set 1</span>
+<span class="text-lg font-bold text-slate-400 line-through decoration-primary decoration-2">185 lbs <span class="text-sm font-normal mx-1">x</span> 8</span>
+</div>
+</div>
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">check</span>
+</div>
+</label>
+<!-- Set 3: Active -->
+<label class="relative group flex items-center justify-between p-1 rounded-2xl mt-2 overflow-hidden ring-2 ring-primary bg-surface-dark-highlight shadow-lg shadow-primary/10 transition-all cursor-pointer">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-center gap-4 pl-4 py-3 w-full">
+<div class="relative flex items-center justify-center">
+<input class="checkbox-custom appearance-none w-7 h-7 border-2 border-slate-400 dark:border-slate-500 rounded-full bg-transparent checked:bg-primary checked:border-primary transition-all focus:ring-0 focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex flex-col grow">
+<span class="text-xs font-bold text-primary uppercase tracking-wide mb-0.5">Current Set</span>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-bold text-slate-900 dark:text-white">205</span>
+<span class="text-xs text-slate-500 font-bold uppercase mr-2">lbs</span>
+<span class="text-slate-500 dark:text-slate-600 text-sm font-light">x</span>
+<span class="text-xl font-bold text-slate-900 dark:text-white ml-2">6</span>
+<span class="text-xs text-slate-500 font-bold uppercase">reps</span>
+</div>
+</div>
+<!-- Inline Edit controls -->
+<div class="flex flex-col gap-1 pr-3">
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-dark hover:bg-white/10 text-slate-400">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+</div>
+</label>
+<!-- Rest Timer Widget (Embedded) -->
+<div class="mt-6 mb-2 p-5 rounded-2xl bg-black dark:bg-[#0a0a0a] border border-white/5 flex items-center justify-between relative overflow-hidden">
+<!-- Glow effect -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary rounded-full blur-[60px] opacity-20"></div>
+<div class="flex flex-col relative z-10">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Rest Timer</span>
+<div class="flex items-baseline gap-1 text-primary">
+<span class="text-4xl font-black tracking-tighter tabular-nums">00:45</span>
+<span class="text-sm font-bold text-slate-600">s</span>
+</div>
+</div>
+<div class="flex items-center gap-3 relative z-10">
+<button class="h-10 px-4 rounded-full bg-surface-dark-highlight hover:bg-surface-dark border border-white/5 text-xs font-bold text-white transition-colors">
+                            +10s
+                         </button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-red-600 transition-colors">
+<span class="material-symbols-outlined">pause</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Up Preview (Subtle) -->
+<div class="mt-6 px-4 opacity-40 hover:opacity-100 transition-opacity">
+<h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Next Exercise</h4>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-dark-highlight flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<div>
+<p class="font-bold text-slate-300">Incline Dumbbell Press</p>
+<p class="text-xs text-slate-500">3 Sets x 12 Reps</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Sticky Controls -->
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent pt-12 z-40">
+<div class="flex flex-col gap-3 max-w-md mx-auto w-full">
+<button class="w-full py-4 rounded-full bg-primary text-white font-bold text-lg tracking-wide shadow-lg shadow-primary/25 hover:bg-red-600 hover:shadow-primary/40 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:animate-pulse">flag</span>
+                End &amp; Go Home
+            </button>
+<button class="w-full py-3 rounded-full bg-transparent border border-transparent hover:bg-black/5 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 font-medium text-sm flex items-center justify-center gap-2 transition-colors">
+                Finish Early <span class="material-symbols-outlined text-sm">arrow_forward</span> Cool Down
+            </button>
+</div>
+</div>
+</body></html>

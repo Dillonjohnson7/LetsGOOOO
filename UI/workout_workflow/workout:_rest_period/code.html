@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workout Rest Period</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "surface-dark": "#2d1616",
+                        "surface-darker": "#1a0b0b",
+                        "accent-green": "#10F235", 
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .timer-glow {
+            box-shadow: 0 0 40px rgba(242, 13, 13, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-6 pb-2">
+<div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-1 block">Active Session</span>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Upper Body Power</h2>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-dark text-slate-300 hover:bg-surface-darker hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</header>
+<!-- Global Progress Bar -->
+<div class="px-6 py-4">
+<div class="flex justify-between items-end mb-2">
+<span class="text-xs font-medium text-slate-400">Workout Progress</span>
+<span class="text-sm font-bold text-slate-200">20%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-dark rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-orange-600 rounded-full" style="width: 20%;"></div>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-6 pb-8 gap-8">
+<!-- Timer Module -->
+<section class="flex flex-col items-center justify-center pt-8 pb-4 relative">
+<!-- Decorative background blur -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<h3 class="text-slate-400 text-sm font-semibold tracking-widest uppercase mb-6">Resting</h3>
+<div class="relative w-64 h-64 flex items-center justify-center mb-8 timer-glow rounded-full">
+<!-- Outer Ring Track -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="46" stroke="#2d1616" stroke-width="4"></circle>
+<!-- Progress Ring -->
+<circle cx="50" cy="50" fill="transparent" r="46" stroke="#f20d0d" stroke-dasharray="289" stroke-dashoffset="144" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<!-- Inner Content -->
+<div class="absolute flex flex-col items-center">
+<span class="text-7xl font-extrabold tracking-tighter tabular-nums leading-none">0:30</span>
+</div>
+</div>
+<button class="w-full max-w-[240px] h-14 bg-primary hover:bg-red-600 active:scale-95 transition-all text-white text-base font-bold tracking-wide rounded-full flex items-center justify-center gap-2 shadow-lg shadow-red-900/20">
+<span class="material-symbols-outlined text-[20px]">fast_forward</span>
+                SKIP REST
+            </button>
+</section>
+<!-- Workout Stack -->
+<section class="flex flex-col gap-4 mt-auto">
+<!-- Completed Exercise (Collapsed) -->
+<div class="bg-surface-dark border border-white/5 rounded-2xl p-4 flex items-center justify-between opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-accent-green/10 flex items-center justify-center text-accent-green">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div>
+<h4 class="text-slate-200 font-bold text-lg leading-tight line-through decoration-slate-500/50">Bench Press</h4>
+<p class="text-slate-400 text-xs mt-0.5">3 sets completed</p>
+</div>
+</div>
+<!-- Mini Set Indicators -->
+<div class="flex gap-1.5">
+<div class="w-2 h-2 rounded-full bg-accent-green"></div>
+<div class="w-2 h-2 rounded-full bg-accent-green"></div>
+<div class="w-2 h-2 rounded-full bg-accent-green"></div>
+</div>
+</div>
+<!-- Up Next Card -->
+<div class="bg-surface-dark border-l-4 border-primary rounded-2xl p-5 relative overflow-hidden group">
+<!-- Background pattern -->
+<div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-black/20 to-transparent pointer-events-none"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col gap-1">
+<span class="text-primary text-xs font-bold tracking-widest uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Up Next
+                        </span>
+<h4 class="text-white font-bold text-2xl">Pull-ups</h4>
+<div class="flex items-center gap-3 mt-2 text-slate-400 text-sm font-medium">
+<span class="flex items-center gap-1 bg-background-dark px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-slate-300">fitness_center</span>
+                                4 Sets
+                            </span>
+<span class="flex items-center gap-1 bg-background-dark px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-slate-300">repeat</span>
+                                8 Reps
+                            </span>
+</div>
+</div>
+<div class="w-12 h-12 bg-background-dark rounded-xl flex items-center justify-center text-slate-300 group-hover:text-white group-hover:bg-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Quick Controls Bottom Bar (Optional context) -->
+<div class="px-6 py-4 bg-background-dark/80 backdrop-blur-md sticky bottom-0 border-t border-white/5 flex justify-around items-center z-50">
+<button class="p-2 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">queue_music</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">timer</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</body></html>

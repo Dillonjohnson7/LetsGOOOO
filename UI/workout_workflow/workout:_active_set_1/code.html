@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workout: Active Set 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "lime-accent": "#ccff00",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#1a1a1a", /* Darker background for more contrast */
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Checkbox Style */
+        .custom-checkbox:checked {
+            background-color: #ccff00; /* Lime green for success */
+            border-color: #ccff00;
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+        
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-hidden relative selection:bg-primary selection:text-white">
+<!-- Top Status Bar (Simulated) -->
+<div class="h-12 w-full bg-background-light dark:bg-background-dark flex items-end justify-center pb-2 z-50">
+<!-- Not functional, just for layout spacing -->
+</div>
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 sticky top-0 z-40 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+<div class="flex flex-col">
+<span class="text-xs uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400 mb-1">Current Routine</span>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">The Power Phase</h1>
+</div>
+<div class="flex items-center gap-2 bg-surface-dark/50 dark:bg-white/10 px-4 py-2 rounded-full border border-slate-200 dark:border-white/5">
+<span class="material-symbols-outlined text-sm text-primary">fitness_center</span>
+<span class="text-sm font-bold tracking-wide">1/18 sets</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32 px-4 w-full max-w-md mx-auto relative flex flex-col gap-6">
+<!-- Exercise Card -->
+<div class="bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-2xl shadow-black/20 ring-1 ring-black/5 dark:ring-white/5 flex flex-col relative group">
+<!-- Hero Image Area -->
+<div class="relative h-64 w-full bg-surface-dark overflow-hidden flex items-center justify-center">
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent z-10"></div>
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 p-8 opacity-10 font-black text-9xl text-white select-none pointer-events-none leading-none -mr-8 -mt-8 tracking-tighter">
+                    BENCH
+                </div>
+<!-- Main Illustration -->
+<div class="w-full h-full bg-cover bg-center opacity-80 z-0 mix-blend-overlay grayscale contrast-125" data-alt="Black and white photo of an athlete bench pressing heavy weights with focus and intensity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5QMKxRyndrl9vW3Q_UjRbyPUmUMKNl-YmsFq0a669ZRi3P4BfsTEkJqW5xmhlUwKSgZrZjPzlB8t1uBXncwa1hmWNzwd2a5t_81zbKl0uxEUyg3e0927vW6IoYH6n7zAOLUG4YcU_Y48RPe8lFw8OdEtoX3uW0AGv--ugY5OnJr6nFc3dwuAystIcIapuMf5ZJ48fwilszMytbSbOXWKW2sAQhqUokPKZXdeAKUwD6-bnva1kkjSBKt4Rw6cu3gg4-XGndK4IHCWu');"></div>
+<!-- Info Overlay -->
+<div class="absolute bottom-4 left-6 z-20 flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary/20 text-primary border border-primary/30 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Compound</span>
+<span class="bg-white/10 text-slate-300 border border-white/10 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Chest</span>
+</div>
+<h2 class="text-3xl font-extrabold text-white tracking-tighter">Bench Press</h2>
+</div>
+<button class="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<!-- Sets List -->
+<div class="p-2 flex flex-col gap-2 bg-slate-50 dark:bg-[#1e1e1e]">
+<!-- Set 1 (Completed) -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-lime-accent/10 border border-lime-accent/20 dark:bg-lime-accent/5 dark:border-lime-accent/10 transition-all duration-300">
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-lime-accent flex items-center justify-center text-black font-bold text-sm shadow-sm shadow-lime-accent/50">
+                            1
+                        </div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-lime-600 dark:text-lime-400 uppercase tracking-wider mb-0.5">Warmup</span>
+<div class="flex items-baseline gap-2">
+<span class="text-lg font-bold text-slate-900 dark:text-white tabular-nums">135<span class="text-xs font-medium text-slate-500 ml-0.5">lbs</span></span>
+<span class="text-slate-300 dark:text-slate-600">×</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white tabular-nums">5<span class="text-xs font-medium text-slate-500 ml-0.5">reps</span></span>
+</div>
+</div>
+</div>
+<div class="pr-2">
+<label class="relative flex items-center justify-center cursor-pointer group">
+<input checked="" class="custom-checkbox appearance-none h-8 w-8 border-2 border-slate-300 dark:border-slate-600 rounded-full bg-transparent checked:bg-lime-accent checked:border-lime-accent transition-all duration-200 focus:ring-0 focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+<span class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-has-[:checked]:opacity-100 transition-opacity duration-200">
+<span class="material-symbols-outlined text-black text-xl font-bold">check</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Set 2 (Current/Next) -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-surface-dark border-l-4 border-l-primary shadow-sm">
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/30">
+                            2
+                        </div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase tracking-wider mb-0.5">Working Set</span>
+<div class="flex items-baseline gap-3">
+<div class="relative">
+<input class="w-16 bg-slate-100 dark:bg-black/40 border-none rounded-lg text-center font-bold text-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary p-1" type="number" value="185"/>
+<span class="absolute right-1 bottom-1.5 text-[10px] text-slate-400 font-bold pointer-events-none">lbs</span>
+</div>
+<span class="text-slate-300 dark:text-slate-600 font-light">×</span>
+<div class="relative">
+<input class="w-14 bg-slate-100 dark:bg-black/40 border-none rounded-lg text-center font-bold text-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary p-1" type="number" value="5"/>
+<span class="absolute right-1 bottom-1.5 text-[10px] text-slate-400 font-bold pointer-events-none">reps</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pr-2">
+<label class="relative flex items-center justify-center cursor-pointer group">
+<input class="custom-checkbox appearance-none h-8 w-8 border-2 border-slate-300 dark:border-slate-600 rounded-full bg-transparent checked:bg-lime-accent checked:border-lime-accent transition-all duration-200 focus:ring-0 focus:ring-offset-0 cursor-pointer hover:border-slate-400 dark:hover:border-slate-500" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Set 3 (Future) -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-transparent dark:bg-transparent border border-slate-200 dark:border-white/5 opacity-60">
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 font-bold text-sm">
+                            3
+                        </div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">Working Set</span>
+<div class="flex items-baseline gap-2">
+<span class="text-lg font-bold text-slate-900 dark:text-white tabular-nums">185<span class="text-xs font-medium text-slate-500 ml-0.5">lbs</span></span>
+<span class="text-slate-300 dark:text-slate-600">×</span>
+<span class="text-lg font-bold text-slate-900 dark:text-white tabular-nums">5<span class="text-xs font-medium text-slate-500 ml-0.5">reps</span></span>
+</div>
+</div>
+</div>
+<div class="pr-2">
+<div class="h-8 w-8 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-full"></div>
+</div>
+</div>
+<!-- Add Set Button -->
+<button class="flex items-center justify-center gap-2 py-3 rounded-xl border border-dashed border-slate-300 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">add</span>
+                    Add Set
+                </button>
+</div>
+</div>
+<!-- Previous History -->
+<div class="bg-white/50 dark:bg-white/5 rounded-2xl p-4 backdrop-blur-sm">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Last Session</h3>
+<span class="text-xs text-slate-400 dark:text-slate-500">Oct 24</span>
+</div>
+<div class="flex items-center gap-4 text-sm font-medium text-slate-700 dark:text-slate-300">
+<div class="flex flex-col items-center">
+<span class="text-xs text-slate-400">Best</span>
+<span class="font-bold text-white">180 lbs</span>
+</div>
+<div class="h-8 w-px bg-slate-300 dark:bg-white/10"></div>
+<div class="flex flex-col items-center">
+<span class="text-xs text-slate-400">Vol</span>
+<span class="font-bold text-white">2,700 lbs</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Rest Timer & Footer -->
+<div class="fixed bottom-0 left-0 w-full p-4 z-50 bg-gradient-to-t from-background-dark via-background-dark to-transparent pt-12">
+<div class="max-w-md mx-auto flex flex-col gap-3">
+<!-- Rest Timer Bar -->
+<div class="bg-lime-accent rounded-full h-14 w-full flex items-center justify-between px-2 pr-2 shadow-[0_0_20px_rgba(204,255,0,0.3)] animate-pulse">
+<div class="flex items-center gap-3 pl-4">
+<span class="material-symbols-outlined text-black animate-spin" style="animation-duration: 3s;">hourglass_top</span>
+<span class="text-black font-bold tracking-tight text-lg">Resting...</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-display font-black text-3xl text-black tabular-nums tracking-tighter w-[3.5ch] text-right">0:55</span>
+<button class="h-10 w-10 bg-black/10 hover:bg-black/20 rounded-full flex items-center justify-center text-black transition-colors">
+<span class="material-symbols-outlined">skip_next</span>
+</button>
+</div>
+</div>
+<!-- Primary Actions (If timer wasn't there, this would be the primary FAB) -->
+<!-- Hidden visually in this specific state as requested by the prompt focusing on the timer, but good to have structure ready -->
+<!-- 
+            <button class="bg-primary text-white font-bold text-lg h-14 rounded-2xl w-full shadow-lg shadow-primary/40 flex items-center justify-center gap-2">
+                Finish Exercise <span class="material-symbols-outlined">arrow_forward</span>
+            </button> 
+            -->
+</div>
+</div>
+</body></html>

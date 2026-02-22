@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post-Workout Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#42f20d",
+                        "primary-dark": "#32b80a",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#0f0f0f", 
+                        "surface-dark": "#181818",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .noise-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .text-stroke {
+             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col items-center justify-center overflow-hidden relative">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<!-- Giant background text -->
+<div class="absolute -right-20 top-20 text-[20rem] font-black text-white/5 leading-none select-none">GO</div>
+<div class="absolute -left-20 bottom-40 text-[20rem] font-black text-white/5 leading-none select-none">GO</div>
+<!-- Gradient blobs -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[80px]"></div>
+<!-- Noise Overlay -->
+<div class="absolute inset-0 noise-bg z-10 pointer-events-none"></div>
+</div>
+<!-- Main Container -->
+<div class="relative z-10 w-full max-w-md h-full min-h-screen flex flex-col justify-between p-6">
+<!-- Header / Navigation Area -->
+<div class="flex justify-between items-center w-full pt-4 mb-4">
+<button class="p-2 rounded-full bg-surface-dark/50 hover:bg-surface-dark text-white backdrop-blur-md transition-colors">
+<span class="material-symbols-outlined !text-[24px]">close</span>
+</button>
+<div class="text-xs font-bold tracking-[0.2em] text-primary uppercase">Summary</div>
+<button class="p-2 rounded-full bg-surface-dark/50 hover:bg-surface-dark text-white backdrop-blur-md transition-colors">
+<span class="material-symbols-outlined !text-[24px]">share</span>
+</button>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 flex flex-col gap-6 overflow-y-auto pb-6 no-scrollbar">
+<!-- Hero Card -->
+<div class="w-full bg-surface-dark/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 shadow-2xl relative overflow-hidden group">
+<!-- Inner Glow -->
+<div class="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-[50px] group-hover:bg-primary/30 transition-all duration-500"></div>
+<!-- Header Text -->
+<div class="relative z-10 text-center mb-8 mt-2">
+<h1 class="text-4xl md:text-5xl font-black italic text-white leading-[0.9] tracking-tighter drop-shadow-lg">
+                        WORKOUT<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">COMPLETE</span> <span class="text-3xl align-middle">🔥</span>
+</h1>
+</div>
+<!-- Program Badge -->
+<div class="flex justify-center mb-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-sm font-semibold text-white/90 tracking-wide uppercase">The Power Phase — Upper Body</span>
+</div>
+</div>
+<!-- 2x2 Stats Grid -->
+<div class="grid grid-cols-2 gap-3 mb-6">
+<!-- Sets -->
+<div class="bg-black/40 rounded-2xl p-4 flex flex-col items-center justify-center border border-white/5 hover:border-primary/30 transition-colors">
+<span class="text-xs font-bold text-white/40 uppercase tracking-wider mb-1">Sets</span>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold text-white">18</span>
+<span class="text-lg font-medium text-white/30">/22</span>
+</div>
+</div>
+<!-- Exercises -->
+<div class="bg-black/40 rounded-2xl p-4 flex flex-col items-center justify-center border border-white/5 hover:border-primary/30 transition-colors">
+<span class="text-xs font-bold text-white/40 uppercase tracking-wider mb-1">Exercises</span>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold text-white">5</span>
+<span class="text-lg font-medium text-white/30">/6</span>
+</div>
+</div>
+<!-- Duration -->
+<div class="bg-black/40 rounded-2xl p-4 flex flex-col items-center justify-center border border-white/5 hover:border-primary/30 transition-colors">
+<span class="text-xs font-bold text-white/40 uppercase tracking-wider mb-1">Duration</span>
+<div class="flex items-center gap-1">
+<span class="text-3xl font-bold text-white">45:12</span>
+</div>
+</div>
+<!-- Streak -->
+<div class="bg-black/40 rounded-2xl p-4 flex flex-col items-center justify-center border border-white/5 hover:border-primary/30 transition-colors">
+<span class="text-xs font-bold text-white/40 uppercase tracking-wider mb-1">Streak</span>
+<div class="flex items-center gap-1">
+<span class="text-3xl font-bold text-primary">5</span>
+<span class="text-lg font-medium text-white/60">Days</span>
+</div>
+</div>
+</div>
+<!-- Total Volume (Footer Metric) -->
+<div class="relative py-4 border-t border-white/10 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white/40 uppercase tracking-wider">Est. Volume</span>
+<span class="text-xl font-bold text-white tracking-tight">~2,400 <span class="text-sm text-white/50 font-medium">lbs</span></span>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+</div>
+</div>
+<!-- Intensity Rating (Extra Component for completeness) -->
+<div class="w-full flex items-center justify-between px-4">
+<span class="text-sm font-semibold text-white/60 uppercase tracking-wider">How did it feel?</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-surface-dark border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-black hover:border-primary transition-all">
+<span class="material-symbols-outlined !text-[20px]">sentiment_dissatisfied</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-dark border border-white/10 flex items-center justify-center text-white/50 hover:bg-primary hover:text-black hover:border-primary transition-all">
+<span class="material-symbols-outlined !text-[20px]">sentiment_neutral</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-dark border border-primary text-primary flex items-center justify-center shadow-[0_0_15px_rgba(66,242,13,0.3)]">
+<span class="material-symbols-outlined !text-[20px] font-bold">sentiment_satisfied</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex flex-col gap-3 pt-4 pb-6 w-full mt-auto">
+<button class="w-full h-14 bg-primary hover:bg-primary-dark text-black font-extrabold text-lg uppercase tracking-wide rounded-full flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(66,242,13,0.2)] hover:shadow-[0_0_30px_rgba(66,242,13,0.4)] transition-all transform active:scale-95">
+<span>Continue to Cool Down</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full h-12 bg-transparent text-white/60 hover:text-white font-bold text-sm uppercase tracking-wide rounded-full flex items-center justify-center transition-colors">
+                Skip to Home
+            </button>
+</div>
+</div>
+</body></html>

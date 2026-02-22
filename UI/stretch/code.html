@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stretching: Step 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df259",
+                        "background-light": "#f5f8f6",
+                        "background-dark": "#102216",
+                        "surface-dark": "#1A3222",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col items-center justify-center">
+<!-- Mobile Container -->
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col overflow-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header Section -->
+<div class="flex w-full flex-col px-6 pt-8 pb-4">
+<!-- Progress Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-2 mb-6">
+<!-- Active dot -->
+<div class="h-1.5 w-8 rounded-full bg-primary shadow-[0_0_10px_rgba(13,242,89,0.4)]"></div>
+<!-- Inactive dots -->
+<div class="h-1.5 w-8 rounded-full bg-slate-200 dark:bg-surface-dark"></div>
+<div class="h-1.5 w-8 rounded-full bg-slate-200 dark:bg-surface-dark"></div>
+<div class="h-1.5 w-8 rounded-full bg-slate-200 dark:bg-surface-dark"></div>
+<div class="h-1.5 w-8 rounded-full bg-slate-200 dark:bg-surface-dark"></div>
+<div class="h-1.5 w-8 rounded-full bg-slate-200 dark:bg-surface-dark"></div>
+</div>
+<!-- Top Controls -->
+<div class="flex items-center justify-between">
+<button class="flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-surface-dark text-slate-900 dark:text-white transition-colors hover:bg-slate-300 dark:hover:bg-[#25422d]">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex items-center gap-2 rounded-full bg-slate-200 dark:bg-surface-dark px-3 py-1.5">
+<span class="text-xs font-bold tracking-wider text-slate-500 dark:text-slate-400 uppercase">Step 1/6</span>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-surface-dark text-slate-900 dark:text-white transition-colors hover:bg-slate-300 dark:hover:bg-[#25422d]">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-1 flex-col items-center justify-center px-6 relative">
+<!-- Dynamic Background Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Illustration Container -->
+<div class="relative z-10 w-full aspect-square max-w-[340px] flex items-center justify-center mb-6">
+<!-- Circular track -->
+<div class="absolute inset-0 rounded-full border border-slate-200 dark:border-surface-dark"></div>
+<!-- Active Progress Arc (simulated with border) -->
+<div class="absolute inset-0 rounded-full border-[3px] border-primary border-r-transparent border-b-transparent -rotate-45 opacity-50"></div>
+<!-- Illustration -->
+<div class="relative w-[80%] h-[80%] flex items-center justify-center" data-alt="Minimalist line art illustration of a person performing a standing hamstring stretch">
+<svg class="w-full h-full text-slate-900 dark:text-white stroke-current stroke-2" fill="none" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<!-- Abstract Figure -->
+<path class="text-primary" d="M100 40C105.523 40 110 35.5228 110 30C110 24.4772 105.523 20 100 20C94.4772 20 90 24.4772 90 30C90 35.5228 94.4772 40 100 40Z" fill="currentColor"></path>
+<path d="M98 42L95 80" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M95 80L75 110L75 170" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M95 80L125 100L145 140" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M98 50L70 60L50 50" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M98 50L120 60L140 45" stroke-linecap="round" stroke-linejoin="round"></path>
+<!-- Highlight for stretch area -->
+<circle class="text-primary fill-primary animate-pulse" cx="125" cy="100" r="4"></circle>
+</svg>
+</div>
+</div>
+<!-- Title & Timer -->
+<div class="text-center z-10 flex flex-col items-center gap-2">
+<h1 class="text-3xl font-bold uppercase tracking-tight text-slate-900 dark:text-white">Hamstring Stretch</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Focus on your breathing.</p>
+<div class="mt-4 flex items-baseline justify-center">
+<span class="text-[64px] font-bold leading-none tracking-tighter text-primary tabular-nums">0:22</span>
+</div>
+</div>
+</div>
+<!-- Bottom Controls -->
+<div class="w-full px-6 pb-10 pt-4">
+<div class="flex flex-col gap-4">
+<!-- Primary Action Button -->
+<button class="group relative flex w-full h-16 items-center justify-center overflow-hidden rounded-full bg-primary text-background-dark transition-all active:scale-[0.98]">
+<div class="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 group-hover:translate-y-0"></div>
+<span class="relative text-lg font-bold uppercase tracking-wide">Next Stretch</span>
+<span class="material-symbols-outlined relative ml-2 text-xl font-bold">arrow_forward</span>
+</button>
+<!-- Secondary Link -->
+<button class="flex items-center justify-center gap-2 py-2 text-sm font-medium text-slate-500 dark:text-slate-400 transition-colors hover:text-primary">
+<span>Skip All</span>
+<span class="material-symbols-outlined text-base">east</span>
+<span>Meditation</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

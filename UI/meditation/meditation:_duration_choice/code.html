@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meditation: Duration Choice</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#197fe6",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111921",
+              "surface-dark": "#1a2632",
+              "text-primary-dark": "#ffffff",
+              "text-secondary-dark": "#93adc8",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col items-center justify-center antialiased overflow-hidden selection:bg-primary selection:text-white">
+<div class="relative w-full max-w-md h-full min-h-screen flex flex-col justify-between p-6 overflow-y-auto no-scrollbar">
+<!-- Ambient Background Glow -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+<div class="absolute top-[-20%] left-[-20%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] mix-blend-screen opacity-40"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] mix-blend-screen opacity-30"></div>
+</div>
+<!-- Top Navigation Area -->
+<header class="flex items-center justify-between w-full py-2 z-10">
+<button class="flex items-center justify-center w-12 h-12 rounded-full text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-surface-dark transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="text-sm font-medium tracking-wide text-text-secondary-dark uppercase opacity-60">Cool Down</div>
+<div class="w-12 h-12"></div> <!-- Spacer for alignment -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col justify-center w-full max-w-sm mx-auto gap-8 my-8 z-10">
+<!-- Titles -->
+<div class="space-y-3 text-center mb-6">
+<h1 class="text-4xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-slate-100 leading-[1.1]">
+                    Finish with <br/><span class="font-bold text-primary">clarity</span>
+</h1>
+<p class="text-base text-slate-500 dark:text-text-secondary-dark font-normal max-w-[280px] mx-auto leading-relaxed">
+                    Select a duration to reset your mind and lock in your progress.
+                </p>
+</div>
+<!-- Options Grid -->
+<div class="flex flex-col gap-4 w-full">
+<!-- Option 1: 3 Min -->
+<button class="group relative w-full p-1 rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dark to-background-dark border border-white/5 rounded-full"></div>
+<!-- Hover Glow Effect -->
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500 rounded-full"></div>
+<div class="relative flex items-center justify-between px-6 py-5 h-20">
+<div class="flex flex-col items-start gap-0.5">
+<span class="text-2xl font-bold text-white tracking-tight group-hover:text-primary transition-colors">3 min</span>
+<span class="text-xs font-medium text-text-secondary-dark uppercase tracking-wider">Quick Reset</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</div>
+</div>
+</button>
+<!-- Option 2: 5 Min (Featured) -->
+<button class="group relative w-full p-1 rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dark to-background-dark border border-primary/30 shadow-[0_0_20px_rgba(25,127,230,0.15)] rounded-full"></div>
+<div class="relative flex items-center justify-between px-6 py-5 h-24">
+<div class="flex items-center gap-4">
+<!-- Icon/Visual for featured item -->
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<div class="flex flex-col items-start gap-0.5">
+<span class="text-3xl font-bold text-white tracking-tight">5 min</span>
+<span class="text-sm font-medium text-primary uppercase tracking-wider">Deep Focus</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">play_arrow</span>
+</div>
+</div>
+</button>
+<!-- Option 3: 10 Min -->
+<button class="group relative w-full p-1 rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dark to-background-dark border border-white/5 rounded-full"></div>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500 rounded-full"></div>
+<div class="relative flex items-center justify-between px-6 py-5 h-20">
+<div class="flex flex-col items-start gap-0.5">
+<span class="text-2xl font-bold text-white tracking-tight group-hover:text-primary transition-colors">10 min</span>
+<span class="text-xs font-medium text-text-secondary-dark uppercase tracking-wider">Total Zen</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</div>
+</div>
+</button>
+</div>
+</main>
+<!-- Bottom Action -->
+<footer class="w-full flex justify-center pb-8 z-10">
+<button class="text-sm font-medium text-text-secondary-dark hover:text-white transition-colors duration-200 border-b border-transparent hover:border-white/20 pb-0.5 flex items-center gap-2 group">
+                Skip to Home
+                <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</footer>
+</div>
+</body></html>
