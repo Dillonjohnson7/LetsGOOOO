@@ -3,6 +3,59 @@ import { ExerciseFigure } from "./exerciseFigures";
 import { WORKOUTS, STRETCHES, YOGA_FLOWS, ANIMAL_FLOWS, calcIntensity, adjustWorkout } from "./workoutData";
 import { loadUserStats, saveUserStats, loadWorkoutLog, addWorkoutLogEntry } from "./dataService";
 
+// ── Welcome Screen ──────────────────────────────────────────────────────────
+function WelcomeScreen({ onStart }) {
+  return (
+    <div className="bg-black font-display text-white min-h-screen flex flex-col relative overflow-hidden selection:bg-[#59f20d] selection:text-black">
+      {/* Noise overlay */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay"
+        style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')" }}
+      />
+      {/* Background GOOOO text */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none">
+        <div className="relative w-full h-full flex flex-col justify-between opacity-10 select-none">
+          <span className="text-[20vh] font-black leading-none text-white tracking-tighter whitespace-nowrap -ml-20">GOOOO</span>
+          <span className="text-[20vh] font-black leading-none tracking-tighter whitespace-nowrap self-end -mr-20" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)', color: 'transparent' }}>GOOOO</span>
+          <span className="text-[20vh] font-black leading-none text-white tracking-tighter whitespace-nowrap -ml-10">GOOOO</span>
+          <span className="text-[20vh] font-black leading-none tracking-tighter whitespace-nowrap self-end -mr-10" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)', color: 'transparent' }}>GOOOO</span>
+        </div>
+      </div>
+
+      {/* Main content */}
+      <main className="flex-1 relative z-10 flex flex-col justify-center items-center px-6 w-full max-w-lg mx-auto pb-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#59f20d]/20 blur-[100px] rounded-full pointer-events-none" />
+        <div className="relative flex flex-col gap-6 items-center w-full mix-blend-lighten text-center" style={{ transform: 'skewX(-12deg)' }}>
+          <h1 className="text-6xl sm:text-7xl font-black italic tracking-tighter leading-[0.85] text-white drop-shadow-lg w-full">
+            <span className="block">ARE YOU</span>
+            <span className="block text-[#59f20d]" style={{ textShadow: '0 0 20px rgba(89,242,13,0.3)' }}>READY</span>
+            <span className="block">TO</span>
+            <span className="block">WORKOUT?</span>
+          </h1>
+          <div className="h-1.5 w-24 bg-[#59f20d] mt-2" />
+          <p className="text-neutral-300 text-sm sm:text-base font-medium tracking-[0.15em] uppercase not-italic max-w-[320px] leading-relaxed">
+            Push your limits. <br /> Break the barriers.
+          </p>
+        </div>
+      </main>
+
+      {/* Bottom CTA */}
+      <div className="relative z-20 w-full p-8 pb-12 bg-gradient-to-t from-black via-black/90 to-transparent">
+        <div className="max-w-md mx-auto w-full">
+          <button
+            onClick={onStart}
+            className="group relative w-full h-16 bg-[#59f20d] rounded-full overflow-hidden flex items-center justify-center transition-transform active:scale-95 duration-100 shadow-[0_0_30px_rgba(89,242,13,0.3)] hover:shadow-[0_0_50px_rgba(89,242,13,0.5)] cursor-pointer border-none"
+          >
+            <span className="relative z-10 text-black text-xl font-black tracking-widest uppercase flex items-center gap-2">
+              Lets GOOOO
+              <span className="material-symbols-outlined text-2xl font-bold">arrow_forward</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Hardcoded Profiles ──────────────────────────────────────────────────────
 const DEFAULT_PROFILES = {
   dillon: { name: "Dillon", height: 180, weight: 170, liftCapacity: "advanced" },
@@ -1782,6 +1835,7 @@ export default function App() {
   const [animate, setAnimate] = useState(false);
   const [dataLoading, setDataLoading] = useState(false);
   const [streaks, setStreaks] = useState({});
+  const [showWelcome, setShowWelcome] = useState(true);
 
   // ── Load profile streaks for picker ──
   useEffect(() => {
@@ -1829,6 +1883,11 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => setAnimate(true), 100);
   }, []);
+
+  // Always scroll to top on any screen change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen, activeUser, showWelcome]);
 
   // Check monthly baseline
   useEffect(() => {
@@ -1911,6 +1970,11 @@ export default function App() {
     setCurrentExercises([]);
     setWorkoutStats(null);
   };
+
+  // ── Welcome screen ──
+  if (showWelcome) {
+    return <WelcomeScreen onStart={() => setShowWelcome(false)} />;
+  }
 
   // ── Loading spinner after profile selection ──
   if (dataLoading) {
